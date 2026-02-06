@@ -1,0 +1,68 @@
+{
+    "tasks": [
+        {
+            "task_id": "get_student_assessment_score",
+            "description": "Get the score and performance details for a specific student in an assessment.",
+            "parameters": {
+                "student_id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the student."
+                },
+                "assessment_id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the assessment (optional)."
+                }
+            },
+            "max_rows": 10,
+            "priority": "high"
+        },
+        {
+            "task_id": "list_assessments_by_level",
+            "description": "List assessments available for a specific difficulty level or type.",
+            "parameters": {
+                "level": {
+                    "type": "string",
+                    "enum": [
+                        "L1",
+                        "L2",
+                        "L3",
+                        "Beginner",
+                        "Intermediate",
+                        "Advanced"
+                    ],
+                    "description": "The difficulty level of the assessment."
+                },
+                "test_name": {
+                    "type": "string",
+                    "description": "Filter by test name (e.g., 'technical', 'aptitude')."
+                }
+            },
+            "max_rows": 20,
+            "priority": "normal"
+        },
+        {
+            "task_id": "get_question_distribution",
+            "description": "Get a breakdown of questions by type and weightage for a category.",
+            "parameters": {
+                "category_id": {
+                    "type": "integer",
+                    "description": "The category ID to analyze."
+                }
+            },
+            "max_rows": 1,
+            "priority": "normal"
+        },
+        {
+            "task_id": "get_assessment_summary",
+            "description": "Get details about an assessment including duration and question count.",
+            "parameters": {
+                "assessment_name": {
+                    "type": "string",
+                    "description": "The name or partial name of the assessment."
+                }
+            },
+            "max_rows": 5,
+            "priority": "normal"
+        }
+    ]
+}
